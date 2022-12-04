@@ -1,5 +1,4 @@
 fn main() {
-    assert!((3..5).contains(&4));
     let input = include_str!("./input.txt");
     part_one(input);
     part_two(input);

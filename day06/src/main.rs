@@ -7,11 +7,11 @@ fn main() {
 fn find_marker(input: &str, chunk_size: usize) -> usize {
     for (i, _c) in input.chars().enumerate() {
         let next_chars: Vec<char> = input[i..i + chunk_size].to_string().chars().collect();
-        let mut four_clone = next_chars.clone();
-        four_clone.sort_unstable();
-        four_clone.dedup();
+        let mut next_chars_clone = next_chars.clone();
+        next_chars_clone.sort_unstable();
+        next_chars_clone.dedup();
 
-        let result = next_chars.len() == four_clone.len();
+        let result = next_chars.len() == next_chars_clone.len();
 
         if result {
             return i + chunk_size;
